@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Livewire\Auth\Register;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -43,6 +44,12 @@ class FortifyServiceProvider extends ServiceProvider
         });
         Fortify::loginView(function () {
             return view('auth.login');
+        });
+        Fortify::registerView(function () {
+            return view('livewire.auth.register');
+        });
+        Fortify::verifyEmailView(function () {
+            return view('livewire.auth.register')->with('message','Mail enviado');
         });
     }
 }
