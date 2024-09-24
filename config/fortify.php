@@ -121,7 +121,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Register View Routes
+    | FormRegister View Routes
     |--------------------------------------------------------------------------
     |
     | Here you may specify if the routes returning views should be disabled as
@@ -146,7 +146,7 @@ return [
     'features' => [
         Features::registration(),
         Features::resetPasswords(),
-        Features::emailVerification(),
+//        Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
 //        Features::twoFactorAuthentication([

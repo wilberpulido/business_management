@@ -6,7 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
-use App\Livewire\Auth\Register;
+use App\Livewire\Auth\FormRegister;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -17,7 +17,7 @@ use Laravel\Fortify\Fortify;
 class FortifyServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * FormRegister any application services.
      */
     public function register(): void
     {
@@ -46,10 +46,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
         Fortify::registerView(function () {
-            return view('livewire.auth.register');
+            return view('auth.register');
         });
-        Fortify::verifyEmailView(function () {
-            return view('livewire.auth.register')->with('message','Mail enviado');
-        });
+//        Fortify::verifyEmailView(function () {
+//            return view('auth.register')->with('message','Mail enviado');
+//        });
     }
 }

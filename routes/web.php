@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Auth\FormRegister;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/register', FormRegister::class)->name('register');
 
 Route::get('/home', function () {
     return view('home');
-})->middleware('verified');
+});
+//    ->middleware('verified');
