@@ -13,11 +13,11 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen flex flex-col justify-center items-center dark:bg-gray-100 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800">
+<div class="dark:bg-gray-100 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800">
 {{--    @include('layouts.navigation')--}}
 
     <!-- Page Content -->
-    <main class="lg:container mx-auto">
+    <main class="container mx-auto min-h-screen">
         {{ $slot }}
     </main>
 </div>

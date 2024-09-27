@@ -1,4 +1,6 @@
 {{--@props(['title'])--}}
+
+
 <div
     x-data = "{ show : false,name:'{{ $name }}' }"
     x-show = "show"
@@ -17,10 +19,10 @@
 >
     {{--  Gray Background  --}}
     <div x-on:click="show = false" class="fixed inset-0 bg-gray-300 opacity-40"></div>
-    {{--  Modal Body  --}}
-    <div class="fixed inset-0 rounded m-auto max-w-3xl p-3 bg-white dark:bg-slate-800" style="max-height: 800px">
+    {{--  Modal contarner  --}}
+    <div class="fixed inset-0 rounded m-auto max-w-[240px] sm:max-w-sm  h-5/6 p-3 flex flex-col justify-between bg-white dark:bg-slate-800">
         {{-- Header --}}
-        <div class="flex justify-between">
+        <div class="p-1 flex justify-between">
             <div>
                 @if(isset($title))
                     <h1 class="text-xl" >
@@ -33,11 +35,16 @@
             </div>
         </div>
         {{-- Body --}}
-        <div>
-            {{ $body }}
-        </div>
-        <div>
-            Footer
-        </div>
+        @if(isset($body))
+            <div class="bg-gray-300 h-full overflow-auto">
+                {{ $body }}
+            </div>
+        @endif
+        {{-- Footer --}}
+        @if(isset($footer))
+            <div class="p-1">
+                Footer
+            </div>
+        @endif
     </div>
 </div>

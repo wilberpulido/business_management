@@ -1,6 +1,15 @@
-<x-layouts.guest>
-    <div class="min-h-screen flex justify-center items-center bg-gray-300">
-        <form method="POST" class="max-w-sm w-full px-8 py-6 rounded-md bg-primary-50 shadow-[15px_15px_20px_-15px_rgba(0,0,0,5)]">
+<button
+    x-data x-on:click="$dispatch('open-modal',{ name: 'login'})"
+    class="rounded-md px-3 py-1 bg-green-500 text-white"
+>
+    Access
+</button>
+<x-modals.modal name="login" >
+    {{--                    @slot('body')--}}
+    {{--                        <span class="p-5"> Body tag test </span>--}}
+    {{--                    @endslot--}}
+    <x-slot:body>
+        <form method="POST" class=" px-8 py-6 bg-violet-400">
             @csrf
             <h1 class="mb-4 text-xl text-center font-bold">
                 Login
@@ -13,5 +22,8 @@
                 <button type="submit" class="text-white bg-slate-800 hover:bg-slate-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </div>
         </form>
-    </div>
-</x-layouts.guest>
+    </x-slot:body>
+    <x-slot:footer>
+        <span>FOOTER</span>
+    </x-slot:footer>
+</x-modals.modal>

@@ -16,11 +16,11 @@ use App\Livewire\Auth\FormRegister;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blade.welcome');
 });
 //Route::get('/register', FormRegister::class)->name('register');
 
 Route::get('/home', function () {
-    return view('home');
+    return view('blade.home');
 });
 //    ->middleware('verified');
