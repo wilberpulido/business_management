@@ -9,7 +9,7 @@
     {{--                        <span class="p-5"> Body tag test </span>--}}
     {{--                    @endslot--}}
     <x-slot:body>
-        <form method="POST" class=" px-8 py-6 bg-violet-400">
+        <form method="POST" action="{{route('login')}}" class="px-8 py-6">
             @csrf
             <h1 class="mb-4 text-xl text-center font-bold">
                 Login
@@ -23,7 +23,4 @@
             </div>
         </form>
     </x-slot:body>
-    <x-slot:footer>
-        <span>FOOTER</span>
-    </x-slot:footer>
 </x-modals.modal>

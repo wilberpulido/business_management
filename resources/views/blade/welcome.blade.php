@@ -15,4 +15,12 @@
 {{--            @endif--}}
         </div>
     </div>
+    <div
+        class="p-6"
+{{--        class="bg-violet-400"--}}
+    >
+{{--        <livewire:models.company.brand.form-repeater testId="5" />--}}
+
+    </div>
 </x-layouts.guest>
+

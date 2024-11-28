@@ -2,7 +2,7 @@
 
 
 <div
-    x-data = "{ show : false,name:'{{ $name }}' }"
+    x-data = "{ show : true,name:'{{ $name }}' }"
     x-show = "show"
     x-on:open-modal.window = "show = ($event.detail.name === name )"
     x-on:close-modal.window = "show = false"
@@ -18,33 +18,36 @@
 {{--    x-transition:leave-end="opacity-0 scale-90"--}}
 >
     {{--  Gray Background  --}}
-    <div x-on:click="show = false" class="fixed inset-0 bg-gray-300 opacity-40"></div>
+    <div x-on:click="show = false" class="fixed inset-0 bg-gray-400 opacity-40"></div>
     {{--  Modal contarner  --}}
-    <div class="fixed inset-0 rounded m-auto max-w-[240px] sm:max-w-sm  h-5/6 p-3 flex flex-col justify-between bg-white dark:bg-slate-800">
-        {{-- Header --}}
-        <div class="p-1 flex justify-between">
-            <div>
-                @if(isset($title))
-                    <h1 class="text-xl" >
-                        {{ $title }}
-                    </h1>
-                @endif
+{{--    landscape:w-screen landscape:max-h-[80vh] landscape:mt-12 --}}
+    <div class="fixed inset-0 overflow-y-auto">
+        <div class="absolute inset-0 rounded max-h-screen m-auto max-w-[240px] sm:max-w-sm min-h-min h-min p-3 flex flex-col justify-between bg-white dark:bg-slate-800">
+            {{-- Header --}}
+            <div class="p-1 flex justify-between">
+                <div>
+                    @if(isset($title))
+                        <h1 class="text-xl" >
+                            {{ $title }}
+                        </h1>
+                    @endif
+                </div>
+                <div>
+                    <button class="px-3 py-1 bg-red-500 text-white" x-on:click="$dispatch('close-modal')"> X </button>
+                </div>
             </div>
-            <div>
-                <button class="px-3 py-1 bg-red-500 text-white" x-on:click="$dispatch('close-modal')"> X </button>
-            </div>
+            {{-- Body --}}
+            @if(isset($body))
+                <div class="h-full">
+                    {{ $body }}
+                </div>
+            @endif
+            {{-- Footer --}}
+            @if(isset($footer))
+                <div class="p-1">
+                    {{$footer}}
+                </div>
+            @endif
         </div>
-        {{-- Body --}}
-        @if(isset($body))
-            <div class="bg-gray-300 h-full overflow-auto">
-                {{ $body }}
-            </div>
-        @endif
-        {{-- Footer --}}
-        @if(isset($footer))
-            <div class="p-1">
-                Footer
-            </div>
-        @endif
     </div>
 </div>
