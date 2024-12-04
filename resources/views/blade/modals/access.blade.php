@@ -9,7 +9,7 @@
     {{--                        <span class="p-5"> Body tag test </span>--}}
     {{--                    @endslot--}}
     <x-slot:body>
-        <form method="POST" action="{{route('login')}}" class="px-8 py-6">
+        <form method="POST" action="{{route('login')}}" class="px-12 sm:px-8 py-6 w-full h-full">
             @csrf
             <h1 class="mb-4 text-xl text-center font-bold">
                 Login

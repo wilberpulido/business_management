@@ -17,7 +17,7 @@
 {{--    @include('layouts.navigation')--}}
 
     <!-- Page Content -->
-    <main class="container mx-auto min-h-screen">
+    <main id="guest-container" class="container mx-auto min-h-screen flex flex-col">
         {{ $slot }}
     </main>
 </div>

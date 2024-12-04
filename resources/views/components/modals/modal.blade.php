@@ -2,7 +2,7 @@
 
 
 <div
-    x-data = "{ show : true,name:'{{ $name }}' }"
+    x-data = "{ show : false,name:'{{ $name }}' }"
     x-show = "show"
     x-on:open-modal.window = "show = ($event.detail.name === name )"
     x-on:close-modal.window = "show = false"
@@ -22,7 +22,7 @@
     {{--  Modal contarner  --}}
 {{--    landscape:w-screen landscape:max-h-[80vh] landscape:mt-12 --}}
     <div class="fixed inset-0 overflow-y-auto">
-        <div class="absolute inset-0 rounded max-h-screen m-auto max-w-[240px] sm:max-w-sm min-h-min h-min p-3 flex flex-col justify-between bg-white dark:bg-slate-800">
+        <div  class="absolute inset-0 rounded max-h-screen m-0 sm:m-auto w-full h-full sm:max-w-[320px] sm:h-min p-3 flex flex-col justify-between bg-white dark:bg-slate-800">
             {{-- Header --}}
             <div class="p-1 flex justify-between">
                 <div>
@@ -38,7 +38,7 @@
             </div>
             {{-- Body --}}
             @if(isset($body))
-                <div class="h-full">
+                <div class="h-full flex justify-center items-center sm:block">
                     {{ $body }}
                 </div>
             @endif

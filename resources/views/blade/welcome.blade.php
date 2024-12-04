@@ -1,5 +1,5 @@
 <x-layouts.guest>
-    <div class="p-6 flex justify-between border-b border-solid border-gray-300">
+    <div class="p-6 flex justify-between">
         <div>
             <div class="bg-red-300 px-12 py-2">
                 LOGO
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div
-        class="p-6"
+        class="p-6 cover-page flex-grow"
 {{--        class="bg-violet-400"--}}
     >
 {{--        <livewire:models.company.brand.form-repeater testId="5" />--}}

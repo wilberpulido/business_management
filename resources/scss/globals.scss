@@ -7,16 +7,17 @@
         &:-webkit-autofill:focus,
         &:-webkit-autofill:active {
             -webkit-text-fill-color: inherit;
-            -webkit-box-shadow: 0 0 0px 1000px inherit inset;
-            box-shadow: 0 0 0px 1000px inherit inset;
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            box-shadow: 0 0 0px 1000px white inset;
             transition: background-color 5000s ease-in-out 0s;
         }
     }
+
     input:-webkit-autofill ~ label,
     input:-webkit-autofill:hover ~ label,
     input:-webkit-autofill:focus ~ label,
     input:-webkit-autofill:active ~ label {
-        @apply peer-focus:start-0;
+        @apply peer-focus:start-0 z-10;
     }
     //Label
     .label-default{
@@ -43,5 +44,23 @@
     }
     .input-floating-outlined{
         @apply block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600;
+    }
+
+    // guest page
+    #guest-container .cover-page {
+        background-image: url('../../public/images/backgrounds/guest_small.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 	640px) {
+        #guest-container .cover-page {
+            background-image: url('../../public/images/backgrounds/guest_medium.png');
+        }
+    }
+    @media (min-width: 1024px) {
+        #guest-container .cover-page {
+            background-image: url('../../public/images/backgrounds/guest_large.png');
+        }
     }
 }
