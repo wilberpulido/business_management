@@ -12,7 +12,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        {{ $slot }}
+    <div class="bg-gray-100 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800">
+        <main class="container mx-auto min-h-screen flex flex-col w-full relative">
+            {{ $slot }}
+        </main>
+    </div>
         @livewireScripts
     </body>
 </html>
